@@ -3,7 +3,7 @@ include(CMakeParseArguments)
 set(FORMAT_STYLE_FILE ${CMAKE_CURRENT_LIST_DIR}/.clang-format)
 
 
-function(targetName format_files)
+function(format_files targetName)
     set(flags)
     set(args)
     set(listArgs SOURCES)
