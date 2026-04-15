@@ -22,7 +22,9 @@ function(format_files targetName)
     else ()
         file(GLOB format_files ${ARG_SOURCES})
         file(GLOB format_style_file ${FORMAT_STYLE_FILE})
-        message(STATUS "clang-format: ${clang_format}; files: ${format_files} ; style:  ${format_style_file}")
+#        Uncomment this fir look format files
+#        message(STATUS "clang-format: ${clang_format}; files: ${format_files} ; style:  ${format_style_file}")
+        message(STATUS "File will format using style ${format_style_file}")
         add_custom_target(${targetName}_format COMMAND ${clang_format} -i -fallback-style=none -style=file:${format_style_file} ${format_files})
     endif ()
 
